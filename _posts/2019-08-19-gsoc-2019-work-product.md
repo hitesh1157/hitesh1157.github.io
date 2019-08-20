@@ -17,7 +17,13 @@ published: true
 * Project: [https://gitlab.com/aossie/CrowdAlert-Web](https://gitlab.com/aossie/CrowdAlert-Web)
 * Organisation: [AOSSIE - Australian Open Source Software Innovation and Education](https://summerofcode.withgoogle.com/organizations/4765796773920768/)
 
-The goal was to add core optimisations and new features to the user experience of the React-Django application. That implies, using Server-side Rendering for faster page loading times (significantly low Time To First Byte), using web-sockets for real-time updates for incidents, comments and HTTP Long Polling for upvotes etc., migrating to a better database, finally, decoupling it from Django views. Then write consistent tests to validate different models, APIs, components, reducers and actions. Finally, hosting an NFSW image classifier. Eventually, we will end up with cleaner code, sound application architecture of both frontend and backend, adding more tests and developing/revamping new features are the most obvious ones. This will not only make developing new features much more easier, cleaner and maintainable but will also dramatically improve user experience.
+CrowdAlert, designed to be a trustworthy crowdsourced information channel, focuses on delivering the right information to the right people on time. It provides a global platform where users are able to view incidents nearby. Whenever a user reports an incident, CrowdAlert does the heavy lifting of notifying the nearby people.
+
+### Goals
+
+CrowdAlert was conceived and idealized by Bruno Woltzenlogel Paleo in 2017 and was initially developed as a mobile app by Siddartha Sekhar Padhi as a part of GSoC 2017. Then in GSoC 2018, Joydeep Mukherjee extended the idea to develop a full-fledged web app.
+
+This year, the goal was to add core optimisations and new features to the user experience of the React-Django application. That implies, using Server-side Rendering for faster page loading times (significantly low Time To First Byte), using web-sockets for real-time updates for incidents, comments and HTTP Long Polling for upvotes etc., migrating to a better database, finally, decoupling it from Django views. Then write consistent tests to validate different models, APIs, components, reducers and actions. Finally, hosting an NFSW image classifier. Eventually, we will end up with cleaner code, sound application architecture of both frontend and backend, adding more tests and developing/revamping new features are the most obvious ones. This will not only make developing new features much more easier, cleaner and maintainable but will also dramatically improve user experience.
  
 ### CHANGELOG (August 19, 2019)
 
@@ -67,7 +73,6 @@ During the second phase, I implemented web sockets using python’s channels pac
 During the final phase, I spent time on writing unit test for each and every component, reducer and action. And for the backend, wrote tests for every model, its methods, and views. Then, since I already had raised a merge request for adding continuous integration, I used it to add new test scripts on top.
 Then, I spent time on developing new features as described in changes section point 6.
 
-I would like to thank Joydeep Mukherjee, Siddartha Padhi, Thuvarakan Tharmarajasingam and Bruno Woltzenlogel Paleo for being so nice and helpful. I have learnt a lot in the past 3 months and it has been a great experience to be a part of this wonderful community.
 
 ### Merge Requests
  
@@ -148,3 +153,6 @@ I would like to thank Joydeep Mukherjee, Siddartha Padhi, Thuvarakan Tharmarajas
 	* New user profile component to edit photo and name
 	* Page for list of incidents reported by the user
 	* Updated firestore rules
+
+### Conclusion
+In conclusion, I would like to thank Joydeep Mukherjee, Siddartha Padhi, Thuvarakan Tharmarajasingam and Bruno Woltzenlogel Paleo for being so nice and helpful. I have learnt a lot in the past 3 months and it has been a great experience to be a part of this wonderful community.
