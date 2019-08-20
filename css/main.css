@@ -6,9 +6,16 @@ layout: null
 
 /* --- General --- */
 
+html {
+  font: 100%/1.75 'Merriweather','Georgia', serif;
+}
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Merriweather','Georgia', serif;
+  font-weight: 400;
+  font-kerning: normal;
+  font-feature-settings: "kern", "liga", "clig", "calt";
   font-size: 18px;
+  line-height: 28px !important;
   color: #404040;
   position: relative;
   background-color: {{ site.page-col }};
@@ -16,6 +23,9 @@ body {
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
   {% endif %}
+}
+p, ul, ol {
+  color: #000000;
 }
 p {
   line-height: 1.5;
