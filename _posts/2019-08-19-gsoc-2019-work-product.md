@@ -15,6 +15,7 @@ published: true
 **Important Links**
 * Live demo: [https://crowdalert.herokuapp.com](https://crowdalert.herokuapp.com)
 * Project: [https://gitlab.com/aossie/CrowdAlert-Web](https://gitlab.com/aossie/CrowdAlert-Web)
+* Organisation: [AOSSIE - Australian Open Source Software Innovation and Education](https://summerofcode.withgoogle.com/organizations/4765796773920768/)
 
 The goal was to add core optimisations and new features to the user experience of the React-Django application. That implies, using Server-side Rendering for faster page loading times (significantly low Time To First Byte), using web-sockets for real-time updates for incidents, comments and HTTP Long Polling for upvotes etc., migrating to a better database, finally, decoupling it from Django views. Then write consistent tests to validate different models, APIs, components, reducers and actions. Finally, hosting an NFSW image classifier. Eventually, we will end up with cleaner code, sound application architecture of both frontend and backend, adding more tests and developing/revamping new features are the most obvious ones. This will not only make developing new features much more easier, cleaner and maintainable but will also dramatically improve user experience.
  
@@ -30,13 +31,13 @@ The changes can be summarized as follows:
 4. Finalized the continuous integration/continuous deployment process to Heroku.
 5. Added frontend (React-Redux) and backend (Django) unit and integration tests which will evaluate the code during CI/CD process.
 6. CrowdAlert-Web now has following end user features:
-   * Finalizing support for Google Maps direction.
-   * Allow edits from view incidents page.
-   * Added “Settings” page​ features.
-   * New UI for email verification page. New designs for ​mobile​ and ​web.​
-   * Support for an option to set the home location.
-   * Caching nearby events in the browser.
-   * Location validation while editing an incident.
+   * Added support for Google Maps direction.
+   * User can now edit incidents directly from main incident's page.
+   * Added “Settings” page​.
+   * New UI for email verification page. New designs for [mobile](https://gitlab.com/aossie/CrowdAlert-Web/uploads/955d115d64408998c636cdc612f09891/Screen_Shot_2019-03-15_at_1.34.23_AM.png) and [web](https://gitlab.com/aossie/CrowdAlert-Web/uploads/5dde16aac7941ee257783c64671287ca/Screen_Shot_2019-03-15_at_1.34.35_AM.png).​
+   * Added an option to set the home location.
+   * Nearby incidents will now be cached using PouchDB for faster load times.
+   * Added location validation while editing an incident.
    * Added “Profile” page for updating name and profile image.
    * CrowdAlert-web now uses a hosted Not Safe for Work (NSFW) image classifier to classify incident images uploaded by the user.
  
@@ -59,12 +60,12 @@ During the first phase of GSoC I implemented server-side rendering. This task wa
  
 - **Finalizing server-side rendering and SEO:** Most of the server-side rendering part has been done. Only remaining part is bug fixing and adding component based dynamic `<meta />` tags. This is handled using React-Helmet.
  
-The first phase was entirely focussed on server-side rendering. The deployment part was quite interesting. Heroku limits application purge size to 500MB for a single dyno except when you containerize your application. So, in order to avoid any overhead costs, I used docker to containerize both frontend and backend into same image only exposing frontend's host and port to public.
+The first phase was entirely focussed on server-side rendering. The deployment part was quite interesting. Since, Heroku limits application purge size to 500MB for a single dyno except when you containerize your application. So, in order to avoid any overhead costs, I used docker to containerize both frontend and backend into same image only exposing frontend's host and port to public.
 
-During the second phase, I implemented web sockets using python’s channels package. Using webSocket connection for signed-in users only for getting events and comments in real-time. For handling messaging queues and groups, we will use channel’s in-memory layer for persistence. For fetching upvote counts incidents and comments, I used HTTP long polling. Then, I spent time designing the Firestore database schemas for every Django app and finally implemented that schema which included refactoring Django views to use new model classes.
+During the second phase, I implemented web sockets using python’s channels package; Using webSocket connection for signed-in users only for getting events and comments in real-time. For handling messaging queues and groups, I used channel’s in-memory layer instead of redis. For fetching upvote counts incidents and comments, I used HTTP long polling. Then, I spent time designing the Firestore database schemas for every Django app and finally implemented that schema which included refactoring Django views to use new model classes.
 
-During the final phase, I spent time on writing unit test for each and every component, reducer and action. And for the backend, wrote tests for every model, its methods, and views. Then sincce I already had raised a merge request for adding continuous integration, I used it to add new test scripts on top.
-Then I spent time on developing new features as described in changes section point 6.
+During the final phase, I spent time on writing unit test for each and every component, reducer and action. And for the backend, wrote tests for every model, its methods, and views. Then, since I already had raised a merge request for adding continuous integration, I used it to add new test scripts on top.
+Then, I spent time on developing new features as described in changes section point 6.
 
 I would like to thank Joydeep Mukherjee, Siddartha Padhi, Thuvarakan Tharmarajasingam and Bruno Woltzenlogel Paleo for being so nice and helpful. I have learnt a lot in the past 3 months and it has been a great experience to be a part of this wonderful community.
 
