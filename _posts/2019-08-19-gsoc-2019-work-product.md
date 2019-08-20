@@ -71,7 +71,7 @@ The first phase was entirely focussed on server-side rendering. The deployment p
 During the second phase, I implemented web sockets using python’s channels package; Using webSocket connection for signed-in users only for getting events and comments in real-time. For handling messaging queues and groups, I used channel’s in-memory layer instead of redis. For fetching upvote counts incidents and comments, I used HTTP long polling. Then, I spent time designing the Firestore database schemas for every Django app and finally implemented that schema which included refactoring Django views to use new model classes.
 
 During the final phase, I spent time on writing unit test for each and every component, reducer and action. And for the backend, wrote tests for every model, its methods, and views. Then, since I already had raised a merge request for adding continuous integration, I used it to add new test scripts on top.
-Then, I spent time on developing new features as described in changes section point 6.
+Then, I spent time on developing new features as described in CHANGELOG section point 6.
 
 
 ### Merge Requests
