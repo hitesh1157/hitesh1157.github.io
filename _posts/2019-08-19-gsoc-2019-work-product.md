@@ -154,5 +154,26 @@ Then, I spent time on developing new features as described in changes section po
 	* Page for list of incidents reported by the user
 	* Updated firestore rules
 
+### Potential New Features
+Below are some new features that CrowdAlert should have, grouped according to their prospective difficulties:
+
+**Easy:**
+* Add support for image upload from the view incidents page
+* Remove WSGI dependency from Django backend
+* Fallback to HTTP request if WebSocket is disconnected
+
+**Medium:**
+* Use Mapbox. Mapbox gives a free tier to work with unlike Google Maps. There are going to be several updates in the application:
+	* Map component in the frontend
+	* Feed
+	* Reverse Geocoding endpoint
+	* Events by location endpoint
+	
+	Use the `react-mapbox-gl` npm package developed by Uber for this purpose. See [this](https://gitlab.com/aossie/CrowdAlert-Web/issues/27) issue.
+
+**Hard:**
+* Use tf-serving for spam classifier
+* Add a news aggregator to get latest news on reported incidents from various sources and display as a side column in Feed
+
 ### Conclusion
 In conclusion, I would like to thank Joydeep Mukherjee, Siddartha Padhi, Thuvarakan Tharmarajasingam and Bruno Woltzenlogel Paleo for being so nice and helpful. I have learnt a lot in the past 3 months and it has been a great experience to be a part of this wonderful community.
