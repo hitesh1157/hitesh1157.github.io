@@ -83,7 +83,7 @@ Then, I spent time on developing new features as described in CHANGELOG section 
 ##### Drawbacks of Existing Application Stack
 CrowdAlert-Web currently uses React-Redux application as its frontend, Django as its backend and Firebase Realtime Database. For the frontend, React with redux scales very well from small applications to really heavy applications and it does not require many changes for it to work with our use case. But the bottlenecks for such content heavy applications are its size and of course SEO (for which you will have to write a lot of code to dynamically add `<meta />` tags for each page in a client-side rendered application, which it is currently). While in server-side rendering, the application's performance depends on the server's resources and the user's network speed. This makes it very useful for content-heavy sites. For example, say that you have a phone with slow internet speed. You try to access a site that downloads 4MB of data before you can see anything. You wouldn't be able to see anything on your screen within 2-4 seconds. That's a really really important problem to solve by SSR. Search engine crawlers do not yet understand/render JavaScript. So for the React application, it is impossible to deliver results relevant to the search query made by the user.
 
-![As you can see, the above image shows Google search console. Google crawler renders nothing for the React application.](./google_crawler_does_not_render_react.png)
+![As you can see, the above image shows Google search console. Google crawler renders nothing for the React application.](/img/google_crawler_does_not_render_react.png)
 
 As you can see, the above image shows Google search console. Google crawler renders nothing for the React application.
 
