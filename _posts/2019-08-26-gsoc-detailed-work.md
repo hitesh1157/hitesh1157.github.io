@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GSoC'19 Progress
+title: GSoC'19 Detailed Technical Description
 excerpt: The goal was to add core optimisations and new features to the user experience of the React-Django application. That implies, using Server-side Rendering for faster page loading times (significantly low Time To First Byte), using web-sockets for real-time updates for incidents, comments and HTTP Long Polling for upvotes etc.
 gh-repo: AOSSIE-Org/CrowdAlert-Web
 gh-badge: [fork, follow]
