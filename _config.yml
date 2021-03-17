@@ -70,8 +70,8 @@ social-network-links:
   rss: true
   email: "hiteshkr1711@gmail.com"
   facebook: hiteshkm7
-  github: hitesh1157
-  twitter: hiteshkr1157
+  github: krhites
+  twitter: cykamora
 #  reddit: yourname
   linkedin: hiteshkrs
 #  xing: yourname
@@ -93,7 +93,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "hitesh1157.github.io"  # eg. "deanattali.com/beautiful-jekyll"
+url-pretty: "krhitesh.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
